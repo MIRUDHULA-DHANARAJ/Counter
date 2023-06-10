@@ -41,14 +41,57 @@ A Synchronous counter is the counter in which the clock input with all the flip-
 
 
 ## Program:
+```
+Developed By: Mirudhula D
+Register No.: 212221230060
+```
+## UP COUNTER:
+```
+module exp6a(clk,q1,q2,q3,q4);
+input clk;
+output reg q1,q2,q3,q4;
+always @(posedge clk)
+begin
+q4=(q1&q2&q3)^q4;
+q3=(q1&q2)^q3;
+q2=q1^q2;
+q1=1^q1;
+end
+endmodule
+```
 
-
+## DOWN COUNTER:
+```
+module exp6b(clk,q1,q2,q3,q4);
+input clk;
+output reg q1,q2,q3,q4;
+always @(posedge clk)
+begin
+q4=((~q3)&(~q2)&(~q1))^q4;
+q3=((~q2)&(~q1))^q3;
+q2=(~q1)^q2;
+q1=1^q1;
+end
+endmodule
+```
 ## RTL Schematic:
+## UP COUNTER:
 
+![image](https://github.com/MIRUDHULA-DHANARAJ/Counter/assets/94828147/15ec39cf-2bf0-4694-8a88-dd4b35d9b91f)
 
+## DOWN COUNTER:
 
+![image](https://github.com/MIRUDHULA-DHANARAJ/Counter/assets/94828147/1a4d507a-8ba5-438b-b050-0418f4700281)
 
 ## Timing Diagram:
+## UP COUNTER:
+
+![image](https://github.com/MIRUDHULA-DHANARAJ/Counter/assets/94828147/1b88735c-990f-456b-9325-7a71a1fb3dac)
+
+
+## DOWN COUNTER:
+
+![image](https://github.com/MIRUDHULA-DHANARAJ/Counter/assets/94828147/e3a3f230-346f-49cb-b5d0-2382a3a1835c)
 
 
 
